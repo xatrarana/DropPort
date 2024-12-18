@@ -1,0 +1,31 @@
+{
+  "name": "drop-port",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "file-sharing",
+    "upload",
+    "download",
+    "file-transfer",
+    "dropport",
+    "chhatra rana"
+  ],
+  "repository": {
+    "url": "https://github.com/xatrarana/DropPort"
+  },
+  "author": "Chhatra Bahadur Rana",
+  "license": "ISC",
+  "description": "DropPort is a file sharing web app that allows users to upload, download, and manage files with a simple and user-friendly interface.",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "git-rev-sync": "^3.0.2",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  }
+}
+
