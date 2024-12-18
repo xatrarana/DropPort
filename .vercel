@@ -1,0 +1,12 @@
+{
+  "name": "drop-port",
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
