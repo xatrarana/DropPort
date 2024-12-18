@@ -1,8 +1,9 @@
-const express = require("express");
-const multer = require("multer");
-const fs = require("fs");
-const path = require("path");
-const gitRev = require('git-rev-sync');
+
+import express,{Request,Response} from "express"
+import fs from "fs"
+import path from "path"
+import gitRev from "git-rev-sync"
+import multer from "multer"
 
 
 const app = express();
@@ -18,10 +19,10 @@ if (!fs.existsSync(UPLOAD_DIR)) {
 
 // Configure Multer for file uploads
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
+  destination: (req:any, file:any, cb:any) => {
     cb(null, UPLOAD_DIR);
   },
-  filename: (req, file, cb) => {
+  filename: (req:any, file:any, cb:any) => {
     cb(null, Date.now() + "_" + file.originalname);
   },
 });
@@ -38,12 +39,12 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 
 // Homepage - File Upload and List
-app.get("/", (req, res) => {
-  fs.readdir(UPLOAD_DIR, { withFileTypes: true }, (err, files) => {
+app.get("/", (req:Request, res:Response) => {
+  fs.readdir(UPLOAD_DIR, { withFileTypes: true }, (err:any, files:any) => {
     if (err) {
       return res.status(500).render("error", { message: "Unable to list files." ,version,repo});
     }
-    const fileList = files.map((file) => ({
+    const fileList = files.map((file:any) => ({
       name: file.name,
       isDirectory: file.isDirectory(),
     }));

@@ -4,7 +4,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node dist/app",
+    "build":"tsc && cp package.json dist/",
+    "dev":"ts-node"
   },
   "keywords": [
     "file-sharing",
@@ -27,6 +29,13 @@
     "git-rev-sync": "^3.0.2",
     "multer": "^1.4.5-lts.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/git-rev-sync": "^2.0.2",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   }
 }
-
