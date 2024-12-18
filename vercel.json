@@ -1,5 +1,5 @@
 {
-  "name": "drop-port",
+  "version": 2,
   "builds": [
     {
       "src": "app.js",
@@ -11,5 +11,8 @@
       "src": "/(.*)",
       "dest": "app.js"
     }
-  ]
+  ],
+  "scripts": {
+    "start": "node app.js"
+  }
 }
